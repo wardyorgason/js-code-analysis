@@ -1,0 +1,3 @@
+{ "name": "fixture-jest-js", "private": true,
+  "scripts": { "test": "jest" },
+  "devDependencies": { "jest": "^30.5.2" } }

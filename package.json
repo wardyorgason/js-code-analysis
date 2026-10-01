@@ -1,0 +1,14 @@
+{
+  "name": "js-code-analysis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Claude Code skill: FTA complexity + unit test coverage for JS/TS projects, reported as CODE_ANALYSIS_REPORT.md",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "bundle": "bash scripts/bundle.sh",
+    "install-skill": "bash scripts/install.sh",
+    "analyze-self": "node skill/scripts/analyze.mjs . --src skill/scripts"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+test/fixtures/*/node_modules/
+test/fixtures/*/package-lock.json
+CODE_ANALYSIS_REPORT.md

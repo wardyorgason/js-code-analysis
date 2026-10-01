@@ -1,0 +1,3 @@
+fta-cli=3.0.1
+c8=12.0.0
+fta-targets=fta-aarch64-apple-darwin fta-x86_64-apple-darwin fta-x86_64-unknown-linux-musl fta-aarch64-unknown-linux-musl

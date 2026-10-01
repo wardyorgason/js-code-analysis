@@ -1,0 +1,3 @@
+{ "name": "fixture-mocha-js", "private": true,
+  "scripts": { "test": "mocha" },
+  "devDependencies": { "mocha": "^12.0.2" } }
