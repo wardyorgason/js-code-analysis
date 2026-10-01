@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Claude Code skill: FTA complexity + unit test coverage for JS/TS projects, reported as CODE_ANALYSIS_REPORT.md",
+  "license": "MIT",
+  "author": "Ward Yorgason",
   "type": "module",
   "engines": { "node": ">=18" },
   "scripts": {

@@ -6,6 +6,8 @@
 # Usage: scripts/bundle.sh [--all-platforms]
 set -euo pipefail
 
+# Bumping FTA_VERSION changes the Rust crates inside the binaries: regenerate
+# skill/licenses/FTA_THIRD_PARTY_LICENSES.txt and skill/THIRD_PARTY_NOTICES.md from FTA's Cargo.lock.
 FTA_VERSION=3.0.1
 C8_VERSION=12.0.0
 TARGETS=(fta-aarch64-apple-darwin fta-x86_64-apple-darwin fta-x86_64-unknown-linux-musl fta-aarch64-unknown-linux-musl)
@@ -28,7 +30,8 @@ for t in "${TARGETS[@]}"; do
   chmod +x "$VENDOR/fta/$t"/fta* 2>/dev/null || true
 done
 cp "$WORK/package/package.json" "$VENDOR/fta/package.json"
-[[ -f "$ROOT/../fta/LICENSE.md" ]] && cp "$ROOT/../fta/LICENSE.md" "$VENDOR/fta/LICENSE.md"  # fta-cli is MIT; the tarball omits the file
+# fta-cli is MIT but the tarball omits the license file, so take it from the matching git tag
+curl -fsSL "https://raw.githubusercontent.com/sgb-io/fta/v$FTA_VERSION/LICENSE.md" -o "$VENDOR/fta/LICENSE.md"
 
 echo "Installing c8@$C8_VERSION"
 mkdir -p "$WORK/c8"
